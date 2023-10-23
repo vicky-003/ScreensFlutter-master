@@ -1,4 +1,4 @@
-class AutoGenerate  {
+class   AutoGenerate  {
   AutoGenerate ({
     required this.seasons,
   });

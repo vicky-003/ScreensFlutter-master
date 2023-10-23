@@ -34,7 +34,7 @@ class _MyAppState extends State<APIdata> {
   void initState() {
     super.initState();
     updateSeason();
-    print("Lentgh" + seasonsList!.seasons.length.toString());
+    print("Length${seasonsList!.seasons.length}");
   }
 
   @override
@@ -107,7 +107,7 @@ class _MyAppState extends State<APIdata> {
                         Padding(
                           padding: const EdgeInsets.only(left: 1),
                           child: Text(
-                            "${Seasonfield[index].type.name}",
+                            Seasonfield[index].type.name,
                             style:
                                 const TextStyle(fontSize: 17, color: Colors.blue),
                           ),
