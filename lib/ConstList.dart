@@ -45,12 +45,12 @@ class _ConstList extends State<ConstList> {
         child: Scaffold(
           key: scaffoldKey,
           appBar: AppBar(
-            title: Text('Dropdown Container List',style: TextStyle(color: Colors.white)),
+            title: const Text('Dropdown Container List',style: TextStyle(color: Colors.white)),
             // leading: IconButton(onPressed: (){}, icon: Icon(Icons.menu_outlined,color: Colors.white,)),
           backgroundColor: Colors.blue),
           drawer: Drawer(
             child: ListView(
-              padding: EdgeInsets.all(0),
+              padding: const EdgeInsets.all(0),
               children: [
                 const DrawerHeader(
                   decoration: BoxDecoration(
@@ -69,8 +69,8 @@ class _ConstList extends State<ConstList> {
                   ),
                 ),
                 ListTile(
-                  leading: Icon(Icons.person),
-                  title: Text('My Profile'),
+                  leading: const Icon(Icons.person),
+                  title: const Text('My Profile'),
                   onTap: (){
                     Navigator.pop(context);
                   },
@@ -88,7 +88,7 @@ class _ConstList extends State<ConstList> {
                   title: const Text(' Dropd Checkbox '),
                   onTap: () {
                     // Navigator.push(context, MaterialPageRoute(builder: (context) => dropdlist()));
-                    Get.to(dropdlist());
+                    Get.to(const dropdlist());
                   },
                 ),
                 ListTile(
@@ -96,7 +96,7 @@ class _ConstList extends State<ConstList> {
                   title: const Text(' Favorites '),
                   onTap: () {
                     // Navigator.push(context, MaterialPageRoute(builder: (context) => like()));
-                    Get.to(like());
+                    Get.to(const like());
                   },
                 ),
                 ListTile(
@@ -104,7 +104,7 @@ class _ConstList extends State<ConstList> {
                   title: const Text(' Checkbox show '),
                   onTap: () {
                     // Navigator.push(context, MaterialPageRoute(builder: (context) => Favorites()));
-                    Get.to(Favorites());
+                    Get.to(const Favorites());
                   },
                 ),
                 ListTile(
@@ -122,7 +122,7 @@ class _ConstList extends State<ConstList> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Container(
-                  margin: EdgeInsets.all(12),
+                  margin: const EdgeInsets.all(12),
                   child: DropdownButton(
                     value: dropdownvalue,
                     icon: const Icon(Icons.keyboard_arrow_down),
@@ -142,7 +142,7 @@ class _ConstList extends State<ConstList> {
                 ),
                 for(int i=0; i< Containercount; i++)
                 Container(
-                  margin: EdgeInsets.all(8),
+                  margin: const EdgeInsets.all(8),
                   decoration: BoxDecoration(
                     border: Border.all(color: Colors.red)
                   ),

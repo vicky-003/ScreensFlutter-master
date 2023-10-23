@@ -51,8 +51,8 @@ class _ClickToShowTextChildPageState extends State<ClickToShowTextChildPage> {
      return Scaffold(
        appBar: AppBar(
          centerTitle: true,
-         leading: Icon(Icons.arrow_back),
-         title: Text(
+         leading: const Icon(Icons.arrow_back),
+         title: const Text(
            'MSQUARE 소식',
            style: TextStyle(
              fontSize: 18,fontWeight: FontWeight.w700,color: Colors.black87
@@ -73,16 +73,17 @@ class _ClickToShowTextChildPageState extends State<ClickToShowTextChildPage> {
               children: [
                 state.loadDataStatus == LoadStatus.loading
                 ? Shimmer.fromColors(
-                    child: Column(
+                    baseColor: Colors.black12, highlightColor: Colors.white10,
+                    child: const Column(
                       children: [
                         TextShimmer(),
                       ],
-                    ), baseColor: Colors.black12, highlightColor: Colors.white10
+                    )
                 )
-                    : state.textlist.length == 0
+                    : state.textlist.isEmpty
                 ? Container(
                   constraints: BoxConstraints(maxHeight: constraints.maxHeight),
-                  child: Center(
+                  child: const Center(
                     child: Text(
                       "No Data",
                     ),
@@ -90,7 +91,7 @@ class _ClickToShowTextChildPageState extends State<ClickToShowTextChildPage> {
                 ) :ListView.builder(
                   itemCount: state.textlist.length,
                     shrinkWrap: true,
-                    physics: ScrollPhysics(),
+                    physics: const ScrollPhysics(),
                     itemBuilder: (context, index) {
                     var texts =state.textlist[index];
                     return TextTileWidgets(

@@ -29,9 +29,9 @@ class _DropDownWithCheckboxesState extends State<dropdlist> {
             },
             dropdownTitleTileText: 'Item 1, Item 2, Item 3, Item 4, Item 5',
             dropdownTitleTileColor: Colors.grey[200],
-            dropdownTitleTileMargin: EdgeInsets.only(
+            dropdownTitleTileMargin: const EdgeInsets.only(
                 top: 22, left: 18, right: 18, bottom: 5),
-            dropdownTitleTilePadding: EdgeInsets.all(10),
+            dropdownTitleTilePadding: const EdgeInsets.all(10),
             dropdownUnderlineBorder: const BorderSide(
                 color: Colors.transparent, width: 2),
             dropdownTitleTileBorder:
@@ -45,7 +45,7 @@ class _DropDownWithCheckboxesState extends State<dropdlist> {
               Icons.keyboard_arrow_up,
               color: Colors.black54,
             ),
-            submitButton: Text('OK'),
+            submitButton: const Text('OK'),
             dropdownTitleTileTextStyle: const TextStyle(
                 fontSize: 14, color: Colors.black54),
             padding: const EdgeInsets.all(6),

@@ -43,7 +43,7 @@ class _MyAppState extends State<APIdata> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Season Selection'),
+          title: const Text('Season Selection'),
         ),
         body: SingleChildScrollView(
           child: Column(
@@ -94,7 +94,7 @@ class _MyAppState extends State<APIdata> {
               ),
               Container(
                   child: ListView.builder(
-                   physics: NeverScrollableScrollPhysics(),
+                   physics: const NeverScrollableScrollPhysics(),
                    shrinkWrap: true,
                     itemCount: Seasonfield.length,
                     itemBuilder: (context, index) {
@@ -109,17 +109,17 @@ class _MyAppState extends State<APIdata> {
                           child: Text(
                             "${Seasonfield[index].type.name}",
                             style:
-                                TextStyle(fontSize: 17, color: Colors.blue),
+                                const TextStyle(fontSize: 17, color: Colors.blue),
                           ),
                         ),
-                        Divider(
+                        const Divider(
                           endIndent: 300,
                           color: Colors.black,
                           thickness: 1,
                         ),
                         Container(
                           child: ListView.builder(
-                            physics: NeverScrollableScrollPhysics(),
+                            physics: const NeverScrollableScrollPhysics(),
                             shrinkWrap: true,
                             itemCount:
                                 Seasonfield[index].type.value.length,
@@ -131,8 +131,8 @@ class _MyAppState extends State<APIdata> {
                                     padding: const EdgeInsets.only(
                                         top: 5, left: 10, bottom: 3),
                                     child: Text(
-                                        "${Seasonfield[index].type.value[index1]}",
-                                        style: TextStyle(
+                                        Seasonfield[index].type.value[index1],
+                                        style: const TextStyle(
                                             fontSize: 15,
                                             color: Colors.black)),
                                   ),

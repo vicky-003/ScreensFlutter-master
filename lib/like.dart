@@ -78,17 +78,17 @@ class Likescreen extends State<like> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          title: Text('Test', style: TextStyle(color: Colors.white)),
+          title: const Text('Test', style: TextStyle(color: Colors.white)),
           backgroundColor: Colors.blue,
           actions: [
             IconButton(
                 onPressed: () {},
-                icon: Icon(
+                icon: const Icon(
                   Icons.favorite_border,
                   color: Colors.white,
                 )),
-            Padding(
-              padding: const EdgeInsets.only(right: 9.0),
+            const Padding(
+              padding: EdgeInsets.only(right: 9.0),
               child: Text(
                 'Favorites',
                 style: TextStyle(fontSize: 15, color: Colors.white),
@@ -107,13 +107,11 @@ class Likescreen extends State<like> {
           children: [
             Container(
               height: 350,
-              padding: EdgeInsets.all(16),
+              padding: const EdgeInsets.all(16),
               child:  ListView.builder(
                   itemCount: items.length,
                   itemBuilder: (context, index) {
                     return Column(
-
-
                       children: [
                         Padding(
                           padding: const EdgeInsets.all(8.0),
@@ -126,14 +124,14 @@ class Likescreen extends State<like> {
                                       width: 21,
                                       color: items[index].color),
                                 ),
-                                margin: EdgeInsets.only(
+                                margin: const EdgeInsets.only(
                                   right: 14,
                                 ),
                               ),
                               Padding(
                                 padding: const EdgeInsets.only(
                                     top: 14, left: 8),
-                                child: Text("${items[index].itemtest}"),
+                                child: Text(items[index].itemtest),
                               ),
                               Expanded(child: Container()),
                               IconButton(
@@ -150,7 +148,7 @@ class Likescreen extends State<like> {
                                     items.removeAt(index);
                                   });
                                 },
-                                icon: Icon(Icons.delete),
+                                icon: const Icon(Icons.delete),
                               ),
                             ],
                           ),
@@ -163,14 +161,14 @@ class Likescreen extends State<like> {
                 child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.blueAccent,
-                      minimumSize: Size(300, 50),
-                      maximumSize: Size(300, 50),
+                      minimumSize: const Size(300, 50),
+                      maximumSize: const Size(300, 50),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10.0),
                       ),
                     ),
                     onPressed: _addnewRow,
-                    child: Text(
+                    child: const Text(
                       'Add items',
                       style: TextStyle(color: Colors.white, fontSize: 18),
                     ))),

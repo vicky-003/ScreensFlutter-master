@@ -32,7 +32,7 @@ class _ClicktoValue extends State<MSQvalue> {
         child: Scaffold(
           key: scaffoldKey,
           appBar: AppBar(
-            title: Text('MSQ',
+            title: const Text('MSQ',
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.w800)),
             backgroundColor: Colors.white,
             centerTitle: true,
@@ -40,17 +40,17 @@ class _ClicktoValue extends State<MSQvalue> {
               onPressed: () {
                 Navigator.pop(context);
               },
-              icon: Icon(Icons.arrow_back)),
+              icon: const Icon(Icons.arrow_back)),
       ),
         body: Container(
-          padding: EdgeInsets.symmetric(vertical: 30),
+          padding: const EdgeInsets.symmetric(vertical: 30),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 20),
-              child: Column(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: const Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
@@ -72,25 +72,25 @@ class _ClicktoValue extends State<MSQvalue> {
                 ],
               ),
             ),
-            Divider(
+            const Divider(
               height: 20,
               thickness: 20,
               color: Colors.black12,
             ),
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 20),
+              padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.only(top: 12),
+                  const Padding(
+                    padding: EdgeInsets.only(top: 12),
                     child: Text(
                       '안녕 얘들아',
                       style: TextStyle(fontWeight: FontWeight.w700, fontSize: 18),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   TextField(
@@ -104,10 +104,10 @@ class _ClicktoValue extends State<MSQvalue> {
                         istext = text.isNotEmpty;
                       });
                     },
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontWeight: FontWeight.w500,fontSize: 18,color: Colors.black
                     ),
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       prefixIcon:
                           Icon(Icons.currency_rupee),
                       focusedBorder: OutlineInputBorder(
@@ -124,17 +124,40 @@ class _ClicktoValue extends State<MSQvalue> {
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
-                  Container(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Container(
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Container(
+                        height: 36,
+                        padding: const EdgeInsets.only(
+                            top: 6, right: 8, bottom: 6, left: 8),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(3),
+                            color: Colors.lightBlueAccent),
+                        child: GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              _textController.text = amounts[0]["numeric"]!;
+                              istext = true;
+                            });
+                          },
+                          child: Text(
+                              amounts[0]["full"]!,
+                              style:const TextStyle(
+                                fontSize: 16,fontWeight: FontWeight.w500
+                              )
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 5),
+                        child: Container(
                           height: 36,
-                          padding: EdgeInsets.only(
+                          padding: const EdgeInsets.only(
                               top: 6, right: 8, bottom: 6, left: 8),
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(3),
@@ -142,95 +165,70 @@ class _ClicktoValue extends State<MSQvalue> {
                           child: GestureDetector(
                             onTap: () {
                               setState(() {
-                                _textController.text = amounts[0]["numeric"]!;
+                                _textController.text = amounts[1]["numeric"]!;
                                 istext = true;
                               });
                             },
                             child: Text(
-                                amounts[0]["full"]!,
-                                style:TextStyle(
+                                amounts[1]["full"]!,
+                                style:const TextStyle(
                                   fontSize: 16,fontWeight: FontWeight.w500
                                 )
                             ),
                           ),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 5),
-                          child: Container(
-                            height: 36,
-                            padding: EdgeInsets.only(
-                                top: 6, right: 8, bottom: 6, left: 8),
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(3),
-                                color: Colors.lightBlueAccent),
-                            child: GestureDetector(
-                              onTap: () {
-                                setState(() {
-                                  _textController.text = amounts[1]["numeric"]!;
-                                  istext = true;
-                                });
-                              },
-                              child: Text(
-                                  amounts[1]["full"]!,
-                                  style:TextStyle(
-                                    fontSize: 16,fontWeight: FontWeight.w500
-                                  )
-                              ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 5),
+                        child: Container(
+                          height: 36,
+                          padding: const EdgeInsets.only(
+                              top: 6, right: 8, bottom: 6, left: 8),
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(3),
+                              color: Colors.lightBlueAccent),
+                          child: GestureDetector(
+                            onTap: () {
+                              setState(() {
+                                _textController.text = amounts[2]["numeric"]!;
+                                istext = true;
+                              });
+                            },
+                            child: Text(
+                                amounts[2]["full"]!,
+                                style:const TextStyle(
+                                  fontSize: 16,fontWeight: FontWeight.w500
+                                )
                             ),
                           ),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 5),
-                          child: Container(
-                            height: 36,
-                            padding: EdgeInsets.only(
-                                top: 6, right: 8, bottom: 6, left: 8),
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(3),
-                                color: Colors.lightBlueAccent),
-                            child: GestureDetector(
-                              onTap: () {
-                                setState(() {
-                                  _textController.text = amounts[2]["numeric"]!;
-                                  istext = true;
-                                });
-                              },
-                              child: Text(
-                                  amounts[2]["full"]!,
-                                  style:TextStyle(
-                                    fontSize: 16,fontWeight: FontWeight.w500
-                                  )
-                              ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 5),
+                        child: Container(
+                          height: 36,
+                          padding: const EdgeInsets.only(
+                              top: 6, right: 8, bottom: 6, left: 8),
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(3),
+                              color: Colors.lightBlueAccent),
+                          child: GestureDetector(
+                            onTap: () {
+                              setState(() {
+                                _textController.text = amounts[3]["numeric"]!;
+                                istext = true;
+                              });
+                            },
+                            child: Text(
+                                amounts[3]["full"]!,
+                                style:const TextStyle(
+                                  fontSize: 16,fontWeight: FontWeight.w500
+                                )
                             ),
                           ),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 5),
-                          child: Container(
-                            height: 36,
-                            padding: EdgeInsets.only(
-                                top: 6, right: 8, bottom: 6, left: 8),
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(3),
-                                color: Colors.lightBlueAccent),
-                            child: GestureDetector(
-                              onTap: () {
-                                setState(() {
-                                  _textController.text = amounts[3]["numeric"]!;
-                                  istext = true;
-                                });
-                              },
-                              child: Text(
-                                  amounts[3]["full"]!,
-                                  style:TextStyle(
-                                    fontSize: 16,fontWeight: FontWeight.w500
-                                  )
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                 ],
               ),
@@ -245,7 +243,7 @@ class _ClicktoValue extends State<MSQvalue> {
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10),
                       ),
-                      content: Text('Your Amount Received ',style: TextStyle(color: Colors.black)), // Replace with your desired message
+                      content: const Text('Your Amount Received ',style: TextStyle(color: Colors.black)), // Replace with your desired message
                     );
                     ScaffoldMessenger.of(context).showSnackBar(snackBar);
                   } else {
@@ -254,20 +252,20 @@ class _ClicktoValue extends State<MSQvalue> {
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10),
                       ),
-                      content: Text('Please Field The Amount !',style: TextStyle(color: Colors.black)), // Message for empty TextField
+                      content: const Text('Please Field The Amount !',style: TextStyle(color: Colors.black)), // Message for empty TextField
                     );
                     ScaffoldMessenger.of(context).showSnackBar(snackBar);
                   }
                 },
                 style: OutlinedButton.styleFrom(
                   backgroundColor:  istext ? Colors.blue : Colors.black12,
-                  padding: EdgeInsets.symmetric(horizontal: 50, vertical: 12),
-                  minimumSize: Size(150, 25),
+                  padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 12),
+                  minimumSize: const Size(150, 25),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10), // Adjust the radius as needed
                   ),
                 ),
-                child: Text(
+                child: const Text(
                   'Submit',
                   style: TextStyle(color: Colors.white), // Text color
                 ),

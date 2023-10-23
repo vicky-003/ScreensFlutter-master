@@ -45,7 +45,7 @@ class _CopyText extends State<CopyText> {
         child: Scaffold(
           key: scaffoldKey,
           appBar: AppBar(
-            title: Text(
+            title: const Text(
                 'Copy Text',
             ),
           ),
@@ -55,21 +55,21 @@ class _CopyText extends State<CopyText> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Container(
-                  padding: EdgeInsets.all(14),
+                  padding: const EdgeInsets.all(14),
                   decoration: BoxDecoration(
                     color: Colors.lightGreen,
                         borderRadius: BorderRadius.circular(6)),
                   child: Row(
                     children: [
                       Container(
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                             shape: BoxShape.circle,
                             color: Colors.green,
                           ),
                           child: IconButton(onPressed: (){
                             copyToClipboard(searchText);
                           },
-                              icon:Icon(Icons.copy,color: Colors.white),
+                              icon:const Icon(Icons.copy,color: Colors.white),
                           )
                       ),
                       GestureDetector(
@@ -80,8 +80,8 @@ class _CopyText extends State<CopyText> {
                             copyToClipboard(searchText);
                           });
                         },
-                        child: Padding(
-                          padding: const EdgeInsets.only(left: 12),
+                        child: const Padding(
+                          padding: EdgeInsets.only(left: 12),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
@@ -99,16 +99,16 @@ class _CopyText extends State<CopyText> {
                         ),
                       ),
                       Expanded(child: Container()),
-                      Icon(Icons.close),
+                      const Icon(Icons.close),
                     ],
                   ),
                 ),
-                SizedBox(height: 20),
-                Text(
+                const SizedBox(height: 20),
+                const Text(
                     'Account Token',
                   style: TextStyle(fontSize: 18,fontWeight: FontWeight.w700),
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 Container(
                   decoration: BoxDecoration(
                       color: Colors.white,
@@ -120,29 +120,29 @@ class _CopyText extends State<CopyText> {
                     decoration: InputDecoration(
                       suffixIcon: searchText.isNotEmpty
                           ?  IconButton(
-                        icon:Icon(Icons.close,color: Colors.black),
+                        icon:const Icon(Icons.close,color: Colors.black),
                         onPressed: () {
                           clearText();
                         },
                       )
                           : null,
-                      prefixIcon: Icon(Icons.search),
+                      prefixIcon: const Icon(Icons.search),
                       // Icon to the left of the text
                       hintText: 'TXID',
-                      hintStyle: TextStyle(
+                      hintStyle: const TextStyle(
                         color: Colors.black26,
                         fontSize: 16, // Customize the text color
                       ),
                       counterText: '',
                       // Hide the character count
-                      focusedBorder: OutlineInputBorder(
+                      focusedBorder: const OutlineInputBorder(
                         borderSide: BorderSide(color:Colors.blue),
                       ),
-                      enabledBorder: OutlineInputBorder(
+                      enabledBorder: const OutlineInputBorder(
                         borderSide: BorderSide(color: Colors.grey),
                       ),
                     ),
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 16.0,
                       color: Colors.black87, // Customize the text color
                     ),
@@ -153,8 +153,8 @@ class _CopyText extends State<CopyText> {
                 ),
                 Expanded(child: Container()),
                 ConstrainedBox(
-                  constraints: BoxConstraints.expand(height: 200,width: 200),
-                  child: Text(''),
+                  constraints: const BoxConstraints.expand(height: 200,width: 200),
+                  child: const Text(''),
                 ),
                 Center(
                   child: OutlinedButton(
@@ -163,14 +163,14 @@ class _CopyText extends State<CopyText> {
                     },
                     style: OutlinedButton.styleFrom(
                       backgroundColor:  istext ? Colors.blue : Colors.black12,
-                      padding: EdgeInsets.symmetric(horizontal: 50, vertical: 12),
-                      minimumSize: Size(150, 25),
-                      maximumSize: Size(250, 40),
+                      padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 12),
+                      minimumSize: const Size(150, 25),
+                      maximumSize: const Size(250, 40),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10), // Adjust the radius as needed
                       ),
                     ),
-                    child: Text(
+                    child: const Text(
                       'Submit',
                       style: TextStyle(color: Colors.white), // Text color
                     ),
@@ -187,7 +187,7 @@ class _CopyText extends State<CopyText> {
     BottomPicker.dateTime(
       titlePadding: EdgeInsets.only(top: 10),
       title: 'Select Time and Date',
-      titleStyle: TextStyle(
+      titleStyle: const TextStyle(
         fontWeight: FontWeight.bold,
         fontSize: 15,
         color: Colors.blue,
@@ -202,7 +202,7 @@ class _CopyText extends State<CopyText> {
       minDateTime: DateTime(2023, 8, 1),
       maxDateTime: DateTime(2023, 12, 2),
       initialDateTime: DateTime(2023, 8, 1),
-      gradientColors: [Color(0xfffdcbf1), Color(0xffe6dee9)],
+      gradientColors: const [Color(0xfffdcbf1), Color(0xffe6dee9)],
     ).show(context)
     : Container();
   }

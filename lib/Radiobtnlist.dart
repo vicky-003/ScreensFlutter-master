@@ -126,7 +126,7 @@ class RadioWidgetDemoState extends State<RadioWidget> {
     return Scaffold(
       appBar: AppBar(
         // IconButton(onPressed: (){}, icon: Icon(Icons.arrow_back, color: Colors.white,)),
-        title: Center(child: Text('Radio Demo', style: TextStyle(color: Colors.white))),
+        title: const Center(child: Text('Radio Demo', style: TextStyle(color: Colors.white))),
         backgroundColor: Colors.blue,
       ),
       body: SingleChildScrollView(
@@ -134,7 +134,7 @@ class RadioWidgetDemoState extends State<RadioWidget> {
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
             Container(
-              padding: EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(8.0),
             ),
             Column(
               children: createRadioList(),

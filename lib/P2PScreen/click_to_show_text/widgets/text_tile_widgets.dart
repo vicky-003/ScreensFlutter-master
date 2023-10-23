@@ -14,7 +14,7 @@ class TextTileWidgets extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(top: 25),
+      padding: const EdgeInsets.only(top: 25),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -24,20 +24,20 @@ class TextTileWidgets extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 20),
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: Text(
                     param.title,
-                    style: TextStyle(
+                    style: const TextStyle(
                         color: Colors.black38,fontWeight: FontWeight.w400,fontSize: 14 ),
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 20),
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: Row(
                     children: [
                       Text(
                         param.subtitle,
-                        style: TextStyle(
+                        style: const TextStyle(
                             fontSize: 16,fontWeight: FontWeight.w600,color: Colors.black87),
                       ),
                       Expanded(child: Container()),
@@ -52,18 +52,18 @@ class TextTileWidgets extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 20),
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: Text(
                     param.date,
-                    style: TextStyle(
+                    style: const TextStyle(
                         color: Colors.black38,fontWeight: FontWeight.w400,fontSize: 14),
                   ),
                 ),
               ],
             ),
           ),
-          SizedBox(height: 16),
-          Divider(height: 12,color: Colors.black38),
+          const SizedBox(height: 16),
+          const Divider(height: 12,color: Colors.black38),
           param.isDescriptionVisible?
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),

@@ -15,7 +15,7 @@ class _TrelloBoardState extends State<TrelloBoard> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          title: Text(
+          title: const Text(
             'Trello',
             style: TextStyle(fontSize: 19),
           ),
@@ -32,13 +32,13 @@ class _TrelloBoardState extends State<TrelloBoard> {
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Padding(
-                        padding: const EdgeInsets.only(top: 10, left: 18),
+                      const Padding(
+                        padding: EdgeInsets.only(top: 10, left: 18),
                         child: Text('Queue'),
                       ),
                       Expanded(child: Container()),
-                      Padding(
-                        padding: const EdgeInsets.only(top: 10),
+                      const Padding(
+                        padding: EdgeInsets.only(top: 10),
                         child: Icon(Icons.more_horiz_outlined, color: Colors.grey),
                       ),
                       IconButton(
@@ -48,13 +48,13 @@ class _TrelloBoardState extends State<TrelloBoard> {
                             builder: (BuildContext context) {
                               return Column(
                                 children: [
-                                  ListTile(
+                                  const ListTile(
                                     title: Text('Add Task'),
                                   ),
                                   Padding(
-                                    padding: EdgeInsets.all(16.0),
+                                    padding: const EdgeInsets.all(16.0),
                                     child: TextField(
-                                      decoration: InputDecoration(labelText: 'Task Name'),
+                                      decoration: const InputDecoration(labelText: 'Task Name'),
                                       onSubmitted: (text) {
                                         addTask(text, true); // Add task to Queue
                                         // Navigator.of(context).pop();
@@ -67,7 +67,7 @@ class _TrelloBoardState extends State<TrelloBoard> {
                             },
                           );
                         },
-                        icon: Icon(Icons.add),
+                        icon: const Icon(Icons.add),
                       ),
                     ],
                   ),
@@ -99,8 +99,8 @@ class _TrelloBoardState extends State<TrelloBoard> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.only(left: 18, top: 10),
+                  const Padding(
+                    padding: EdgeInsets.only(left: 18, top: 10),
                     child: Text('In-Progress'),
                   ),
                   Expanded(
@@ -138,8 +138,8 @@ class _TrelloBoardState extends State<TrelloBoard> {
   Widget createCard(String title, String author) {
     return Container(
       width: 200,
-      padding: EdgeInsets.all(12),
-      margin: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+      padding: const EdgeInsets.all(12),
+      margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
       decoration: BoxDecoration(
         border: Border.all(width: 0.5),
         borderRadius: BorderRadius.circular(5),
@@ -148,8 +148,8 @@ class _TrelloBoardState extends State<TrelloBoard> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(title,
-              style:TextStyle(color: Colors.black87,fontSize: 14) ),
-          Text('- by $author', style: TextStyle(color: Colors.grey,fontSize: 14)),
+              style:const TextStyle(color: Colors.black87,fontSize: 14) ),
+          Text('- by $author', style: const TextStyle(color: Colors.grey,fontSize: 14)),
         ],
       ),
     );
